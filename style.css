@@ -1,0 +1,85 @@
+/* Genel sayfa ayarı */
+body {
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+/* 1. Grup Seçici Örneği */
+h1, h2, p {
+    color: #333;
+    margin: 10px;
+}
+
+/* 1. Hiyerarşik Seçici Örneği: Menü yapısı */
+nav ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    text-align: right;
+    background-color: #e2e8f0;
+}
+
+/* Menüyü yatay yapma */
+nav ul li {
+    display: inline-block; 
+}
+
+/* 2. Hiyerarşik Seçici Örneği: Link tasarımı */
+nav ul li a {
+    text-decoration: none;
+    padding: 8px 16px;
+    color: #333;
+    border-radius: 4px;
+}
+
+/* Menü hover efekti */
+nav ul li a:hover {
+    background-color: #8da4d0;
+    color: white;
+}
+
+/* Sütunları yan yana getirme (Display mantığı) */
+main {
+    display: flex; 
+    padding: 10px;
+}
+
+.icerik {
+    width: 50%;
+    background-color: #faeed7; /* Görseldeki sarımtırak renk */
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #e5d3b3;
+    border-radius: 5px;
+}
+
+.yan-menu {
+    width: 50%;
+    background-color: #e6f0f4; /* Görseldeki mavimsi renk */
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #baccce;
+    border-radius: 5px;
+}
+
+/* Metin düzenlemeleri (En az 3 özellik kuralı) */
+.icerik p, .yan-menu p {
+    font-size: 15px;      /* 1. Özellik */
+    line-height: 1.8;     /* 2. Özellik */
+    color: #444;          /* 3. Özellik */
+    text-align: justify;  /* 4. Özellik */
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #eceef1;
+    border-top: 1px solid #ddd;
+}
