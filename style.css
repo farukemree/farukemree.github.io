@@ -85,18 +85,18 @@ footer {
 }
 
 /* ========================================= */
-/* LAB 3: DETAYLI İLETİŞİM FORMU (GÖRSELE BİREBİR) */
+/* LAB 3: DETAYLI İLETİŞİM FORMU (FERAH VE GENİŞ TASARIM) */
 /* ========================================= */
 
 .contact-container {
     width: 100%;
-    max-width: 600px; /* Görseldeki gibi derli toplu durması için sınırlandırıldı */
+    max-width: 600px;
     margin: 40px auto;
-    padding: 30px;
+    padding: 40px; /* Formun genel iç boşluğu artırıldı */
     background-color: #ffffff;
     border: 1px solid #eaeaea;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Şık ve hafif bir gölge eklendi */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     font-family: Arial, sans-serif;
 }
 
@@ -104,28 +104,33 @@ footer {
 .contact-container h2 {
     text-align: center;
     color: #333;
-    margin-bottom: 25px;
+    margin-bottom: 35px; /* Başlık ile form elemanları arasındaki boşluk artırıldı */
     font-size: 24px;
 }
 
-/* Etiketler (Labels) */
+/* Etiketler (Labels - ÖNEMLİ: Boşluklar buraya eklendi) */
 .contact-container label {
     display: block;
     font-weight: bold;
     color: #444;
-    margin-bottom: 8px;
+    margin-top: 25px; /* BİR ÖNCEKİ ELEMANLA ARASINA CİDDİ BOŞLUK EKLENDİ */
+    margin-bottom: 10px; /* Yazı ile kendi kutusu arasındaki boşluk artırıldı */
     font-size: 15px;
 }
 
-/* Tüm metin giriş alanları (Çoklu seçici kullanımı) */
+/* İlk etiketin üstünde fazladan boşluk olmasını engellemek için */
+.contact-container form > label:first-of-type {
+    margin-top: 0;
+}
+
+/* Tüm metin giriş alanları */
 .contact-container input[type="text"],
 .contact-container input[type="email"],
 .contact-container input[type="password"],
 .contact-container select,
 .contact-container textarea {
-    width: 100%; /* Bulundukları alanın tamamını kaplamaları için */
-    padding: 12px;
-    margin-bottom: 20px;
+    width: 100%;
+    padding: 14px; /* Kutuların iç boşluğu artırıldı, yazılar daha ferah duracak */
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -133,20 +138,19 @@ footer {
     font-size: 14px;
 }
 
-/* Radio ve Checkbox Grupları (Görseldeki açık gri kutucuklar) */
+/* Radio ve Checkbox Grupları (Gri kutular) */
 .form-group-box {
     background-color: #f8f9fa;
     border: 1px solid #f1f1f1;
-    padding: 15px;
+    padding: 20px; /* Kutunun iç boşluğu artırıldı */
     border-radius: 5px;
-    margin-bottom: 20px;
 }
 
+/* Gri kutuların içindeki alt etiketlerin ayarı */
 .form-group-box label {
-    display: block;
-    font-weight: normal; /* İçerideki yazılar çok kalın olmasın */
-    margin-bottom: 8px;
-    color: #555;
+    margin-top: 0; /* İçerideki elemanlarda üst boşluğu sıfırladık */
+    margin-bottom: 12px; /* Seçenekler arası boşluk */
+    font-weight: normal;
     cursor: pointer;
 }
 
@@ -156,26 +160,26 @@ footer {
 
 .form-group-box input[type="radio"],
 .form-group-box input[type="checkbox"] {
-    margin-right: 8px;
+    margin-right: 10px;
 }
 
-/* Dosya yükleme alanı alt boşluğu */
+/* Dosya yükleme alanı */
 .contact-container input[type="file"] {
-    margin-bottom: 20px;
     display: block;
+    margin-top: 10px;
 }
 
 /* Yan yana duran butonların taşıyıcısı */
 .button-group {
     display: flex;
-    gap: 15px; /* İki buton arasına boşluk */
-    margin-top: 10px;
+    gap: 20px; /* İki buton arasına daha fazla boşluk */
+    margin-top: 35px; /* Butonlar ile üstteki mesaj kutusu arasına büyük boşluk eklendi */
 }
 
 /* Buton Stilleri */
 .btn-submit, .btn-reset {
-    flex: 1; /* Butonların genişliklerinin tam eşit olması için */
-    padding: 15px;
+    flex: 1; 
+    padding: 16px;
     font-size: 16px;
     font-weight: bold;
     color: white;
@@ -185,17 +189,10 @@ footer {
 }
 
 /* Mavi Gönder Butonu */
-.btn-submit {
-    background-color: #007bff; 
-}
-.btn-submit:hover {
-    background-color: #0056b3;
-}
+.btn-submit { background-color: #007bff; }
+.btn-submit:hover { background-color: #0056b3; }
 
 /* Kırmızı Temizle Butonu */
-.btn-reset {
-    background-color: #dc3545; 
-}
-.btn-reset:hover {
-    background-color: #c82333;
-}
+.btn-reset { background-color: #dc3545; }
+.btn-reset:hover { background-color: #c82333; }
+
