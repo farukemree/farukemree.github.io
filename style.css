@@ -83,3 +83,57 @@ footer {
     background-color: #eceef1;
     border-top: 1px solid #ddd;
 }
+
+/* ========================================= */
+/* LAB 3: İLETİŞİM FORMU TASARIMI (YENİ EKLENEN KISIM) */
+/* ========================================= */
+
+/* 1. Konteyner Ayarları */
+.contact-container {
+    width: 60%; /* Föye uygun genişlik ayarı */
+    margin: 20px auto; /* Sayfayı ortalamak için margin: auto kullanımı */
+    padding: 30px; /* Elemanların kenara yapışmaması için geniş iç boşluk */
+    border: 1px solid #ccc; /* Belirgin kenarlık */
+    border-radius: 8px; /* Hafif köşe yuvarlaması */
+    background-color: #ffffff;
+}
+
+/* Etiket (Label) Ayarları */
+.contact-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 2. Form Elemanlarına Müdahale (Çoklu Seçici Kullanımı) */
+/* input, select ve textarea elemanları topluca seçiliyor */
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container select,
+.contact-container textarea {
+    width: 100%; /* Bulundukları alanın tamamını kaplamaları için */
+    padding: 12px; /* Yazı yazıldığında ferah durması için iç boşluk */
+    margin-bottom: 20px; /* Altlarındaki elemanlarla aralarına boşluk koymak için */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Width 100% kullanıldığında padding'in taşmasını engeller */
+    font-family: inherit;
+}
+
+/* 3. Gönder Butonu Ayarları */
+.contact-container input[type="submit"] {
+    background-color: #007bff; /* Gönder butonunun arka plan rengi */
+    color: white;
+    border: none; /* Kenarlığı kaldırma */
+    padding: 15px 30px; /* Hem sağ-sol hem de alt-üst padding değerleriyle butonu büyütme */
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Gönder butonunun üzerine gelindiğinde (Hover) renk değişimi */
+.contact-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}
