@@ -2,7 +2,7 @@
 <html lang="tr">
     <head>
         <meta charset="UTF-8">
-        <title>Faruk Emre Bakir</title>
+        <title>Faruk Emre Bakir - İletişim</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -10,12 +10,14 @@
 
         <p>Benimle iletişime geçebileceğiniz bilgiler</p>
 
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="contact.html">İletişim</a></li>
-        </ul> 
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="interests.html">İlgi Alanlarım</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+            </ul>
+        </nav>
         
         <h2>İletişim Bilgilerim</h2>
         <ul>
@@ -25,7 +27,6 @@
         </ul>
         
         <h2>Sık Sorulan Sorular</h2>
-
         <h3>Mesajlara ne kadar sürede dönüş yapıyorsunuz?</h3>
         <p>Genellikle 24 saat içinde e-posta yoluyla dönüş yapıyorum.</p>
 
@@ -46,6 +47,26 @@
                 <label for="eposta">E-posta Adresi:</label>
                 <input type="email" id="eposta" name="eposta" placeholder="ornek@mail.com" required>
 
+                <label for="sifre">Başvuru Takip Şifresi:</label>
+                <input type="password" id="sifre" name="sifre" placeholder="Şifrenizi girin">
+
+                <label>İletişim Tercihi:</label>
+                <div class="form-group-box">
+                    <label class="radio-label">
+                        <input type="radio" name="iletisim" value="eposta" checked> Bana e-posta ile ulaşın
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="iletisim" value="telefon"> Bana telefonla ulaşın
+                    </label>
+                </div>
+
+                <label>İlgi Alanları / Yetenekler:</label>
+                <div class="form-group-box">
+                    <label class="checkbox-label"><input type="checkbox" name="yetenek" value="html"> HTML</label>
+                    <label class="checkbox-label"><input type="checkbox" name="yetenek" value="css"> CSS</label>
+                    <label class="checkbox-label"><input type="checkbox" name="yetenek" value="algoritma"> Algoritma</label>
+                </div>
+
                 <label for="konu">Konu:</label>
                 <select id="konu" name="konu" required>
                     <option value="">Lütfen bir konu seçin...</option>
@@ -54,13 +75,20 @@
                     <option value="geribildirim">Geri Bildirim</option>
                 </select>
 
-                <label for="mesaj">Mesajınız:</label>
-                <textarea id="mesaj" name="mesaj" rows="5" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..." required></textarea>
+                <label for="dosya">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
+                <input type="file" id="dosya" name="dosya">
 
-                <input type="submit" value="Gönder">
+                <label for="mesaj">Mesajınız:</label>
+                <textarea id="mesaj" name="mesaj" rows="4" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..." required></textarea>
+
+                <div class="button-group">
+                    <input type="submit" value="Gönder" class="btn-submit">
+                    <input type="reset" value="Temizle" class="btn-reset">
+                </div>
                 
             </form>
         </div>
+        
         <footer>
             © 2026 Faruk Emre Bakır | Web Programlama
         </footer>
