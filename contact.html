@@ -1,38 +1,68 @@
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="tr">
     <head>
-        <title> Faruk Emre Bakir</title>
+        <meta charset="UTF-8">
+        <title>Faruk Emre Bakir</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-          <h1>İletişim</h1>
+        <h1>İletişim</h1>
 
-    <p>Benimle iletişime geçebileceğiniz bilgiler</p>
+        <p>Benimle iletişime geçebileceğiniz bilgiler</p>
 
-    <ul>
-        <li><a href="index.html">Ana Sayfa</a></li>
-        <li><a href="hakkimda.html">Hakkımda</a></li>
-        <li><a href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
-        <li><a href="iletisim.html">İletişim</a></li>
-    </ul> 
-    <h2>İletişim Bilgilerim</h2>
-    <ul>
-        <li>📧 E-posta: <a href="mailto:fbakir@marun.edu.tr">fbakir@marun.edu.tr</a></li>
-        <li>📱 Telefon: <a href="tel:+905531371483">+90 553 137 14 83</a></li>
-        <li>💻 GitHub: <a href="https://github.com/farukemree/farukemree.github.io">GitHub Profilim</a></li>
-    </ul>
-      <h2>Sık Sorulan Sorular</h2>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="interests.html">İlgi Alanlarım</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+        </ul> 
+        
+        <h2>İletişim Bilgilerim</h2>
+        <ul>
+            <li>📧 E-posta: <a href="mailto:fbakir@marun.edu.tr">fbakir@marun.edu.tr</a></li>
+            <li>📱 Telefon: <a href="tel:+905531371483">+90 553 137 14 83</a></li>
+            <li>💻 GitHub: <a href="https://github.com/farukemree/farukemree.github.io">GitHub Profilim</a></li>
+        </ul>
+        
+        <h2>Sık Sorulan Sorular</h2>
 
-    <h3>Mesajlara ne kadar sürede dönüş yapıyorsunuz?</h3>
-    <p>Genellikle 24 saat içinde e-posta yoluyla dönüş yapıyorum.</p>
+        <h3>Mesajlara ne kadar sürede dönüş yapıyorsunuz?</h3>
+        <p>Genellikle 24 saat içinde e-posta yoluyla dönüş yapıyorum.</p>
 
-    <h3>Projelerde iş birliğine açık mısınız?</h3>
-    <p>Evet, özellikle eğitim ve açık kaynak projelerinde iş birliklerine açığım.</p>
+        <h3>Projelerde iş birliğine açık mısınız?</h3>
+        <p>Evet, özellikle eğitim ve açık kaynak projelerinde iş birliklerine açığım.</p>
 
-    <a href="index.html">← Ana sayfaya geri dön</a>
+        <a href="index.html">← Ana sayfaya geri dön</a>
 
-    <hr>
-     <footer>
-        © 2026 Faruk Emre Bakır | Web Programlama
-    </footer>
+        <hr>
+
+        <div class="contact-container">
+            <h2>Detaylı İletişim Formu</h2>
+            <form action="#" method="post">
+                
+                <label for="adsoyad">Ad Soyad:</label>
+                <input type="text" id="adsoyad" name="adsoyad" placeholder="Örn: Asaf Karataş" required>
+
+                <label for="eposta">E-posta Adresi:</label>
+                <input type="email" id="eposta" name="eposta" placeholder="ornek@mail.com" required>
+
+                <label for="konu">Konu:</label>
+                <select id="konu" name="konu" required>
+                    <option value="">Lütfen bir konu seçin...</option>
+                    <option value="isteklifi">İş Teklifi</option>
+                    <option value="soru">Soru</option>
+                    <option value="geribildirim">Geri Bildirim</option>
+                </select>
+
+                <label for="mesaj">Mesajınız:</label>
+                <textarea id="mesaj" name="mesaj" rows="5" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..." required></textarea>
+
+                <input type="submit" value="Gönder">
+                
+            </form>
+        </div>
+        <footer>
+            © 2026 Faruk Emre Bakır | Web Programlama
+        </footer>
     </body>
 </html>
