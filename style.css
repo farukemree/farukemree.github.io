@@ -85,14 +85,14 @@ footer {
 }
 
 /* ========================================= */
-/* LAB 3: DETAYLI İLETİŞİM FORMU (FERAH VE GENİŞ TASARIM) */
+/* LAB 3: DETAYLI İLETİŞİM FORMU (GÖRSELE BİREBİR ORANTILI) */
 /* ========================================= */
 
 .contact-container {
     width: 100%;
     max-width: 600px;
     margin: 40px auto;
-    padding: 40px; /* Formun genel iç boşluğu artırıldı */
+    padding: 30px;
     background-color: #ffffff;
     border: 1px solid #eaeaea;
     border-radius: 8px;
@@ -104,23 +104,18 @@ footer {
 .contact-container h2 {
     text-align: center;
     color: #333;
-    margin-bottom: 35px; /* Başlık ile form elemanları arasındaki boşluk artırıldı */
+    margin-bottom: 25px;
     font-size: 24px;
 }
 
-/* Etiketler (Labels - ÖNEMLİ: Boşluklar buraya eklendi) */
+/* Ana Etiketler (Labels - Üst boşluklar tamamen sıfırlandı) */
 .contact-container label {
     display: block;
     font-weight: bold;
     color: #444;
-    margin-top: 25px; /* BİR ÖNCEKİ ELEMANLA ARASINA CİDDİ BOŞLUK EKLENDİ */
-    margin-bottom: 10px; /* Yazı ile kendi kutusu arasındaki boşluk artırıldı */
+    margin-top: 0; /* GEREKSİZ ÜST BOŞLUK KALDIRILDI */
+    margin-bottom: 8px; /* Sadece yazıyla kutu arasında ince bir boşluk bırakıldı */
     font-size: 15px;
-}
-
-/* İlk etiketin üstünde fazladan boşluk olmasını engellemek için */
-.contact-container form > label:first-of-type {
-    margin-top: 0;
 }
 
 /* Tüm metin giriş alanları */
@@ -130,7 +125,8 @@ footer {
 .contact-container select,
 .contact-container textarea {
     width: 100%;
-    padding: 14px; /* Kutuların iç boşluğu artırıldı, yazılar daha ferah duracak */
+    padding: 12px;
+    margin-bottom: 20px; /* Her bir kutunun altından standart 20px boşluk veriyoruz */
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -138,48 +134,49 @@ footer {
     font-size: 14px;
 }
 
-/* Radio ve Checkbox Grupları (Gri kutular) */
+/* Radio ve Checkbox Grupları (Açık Gri Kutular) */
 .form-group-box {
     background-color: #f8f9fa;
     border: 1px solid #f1f1f1;
-    padding: 20px; /* Kutunun iç boşluğu artırıldı */
+    padding: 15px;
     border-radius: 5px;
+    margin-bottom: 20px; /* Gri kutuların altına da aynı 20px boşluğu veriyoruz */
 }
 
 /* Gri kutuların içindeki alt etiketlerin ayarı */
 .form-group-box label {
-    margin-top: 0; /* İçerideki elemanlarda üst boşluğu sıfırladık */
-    margin-bottom: 12px; /* Seçenekler arası boşluk */
+    margin-bottom: 10px;
     font-weight: normal;
     cursor: pointer;
+    color: #555;
 }
 
 .form-group-box label:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0; /* Gri kutunun en altındaki elemanın boşluğunu siliyoruz ki kutu sarkmasın */
 }
 
 .form-group-box input[type="radio"],
 .form-group-box input[type="checkbox"] {
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 /* Dosya yükleme alanı */
 .contact-container input[type="file"] {
     display: block;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 /* Yan yana duran butonların taşıyıcısı */
 .button-group {
     display: flex;
-    gap: 20px; /* İki buton arasına daha fazla boşluk */
-    margin-top: 35px; /* Butonlar ile üstteki mesaj kutusu arasına büyük boşluk eklendi */
+    gap: 15px; 
+    margin-top: 10px;
 }
 
 /* Buton Stilleri */
 .btn-submit, .btn-reset {
     flex: 1; 
-    padding: 16px;
+    padding: 15px;
     font-size: 16px;
     font-weight: bold;
     color: white;
@@ -188,11 +185,8 @@ footer {
     cursor: pointer;
 }
 
-/* Mavi Gönder Butonu */
 .btn-submit { background-color: #007bff; }
 .btn-submit:hover { background-color: #0056b3; }
 
-/* Kırmızı Temizle Butonu */
 .btn-reset { background-color: #dc3545; }
 .btn-reset:hover { background-color: #c82333; }
-
