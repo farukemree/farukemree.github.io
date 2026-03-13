@@ -85,55 +85,117 @@ footer {
 }
 
 /* ========================================= */
-/* LAB 3: İLETİŞİM FORMU TASARIMI (YENİ EKLENEN KISIM) */
+/* LAB 3: DETAYLI İLETİŞİM FORMU (GÖRSELE BİREBİR) */
 /* ========================================= */
 
-/* 1. Konteyner Ayarları */
 .contact-container {
-    width: 60%; /* Föye uygun genişlik ayarı */
-    margin: 20px auto; /* Sayfayı ortalamak için margin: auto kullanımı */
-    padding: 30px; /* Elemanların kenara yapışmaması için geniş iç boşluk */
-    border: 1px solid #ccc; /* Belirgin kenarlık */
-    border-radius: 8px; /* Hafif köşe yuvarlaması */
+    width: 100%;
+    max-width: 600px; /* Görseldeki gibi derli toplu durması için sınırlandırıldı */
+    margin: 40px auto;
+    padding: 30px;
     background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Şık ve hafif bir gölge eklendi */
+    font-family: Arial, sans-serif;
 }
 
-/* Etiket (Label) Ayarları */
+/* Form Başlığı */
+.contact-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+/* Etiketler (Labels) */
 .contact-container label {
     display: block;
-    margin-bottom: 5px;
     font-weight: bold;
-    color: #333;
+    color: #444;
+    margin-bottom: 8px;
+    font-size: 15px;
 }
 
-/* 2. Form Elemanlarına Müdahale (Çoklu Seçici Kullanımı) */
-/* input, select ve textarea elemanları topluca seçiliyor */
+/* Tüm metin giriş alanları (Çoklu seçici kullanımı) */
 .contact-container input[type="text"],
 .contact-container input[type="email"],
+.contact-container input[type="password"],
 .contact-container select,
 .contact-container textarea {
     width: 100%; /* Bulundukları alanın tamamını kaplamaları için */
-    padding: 12px; /* Yazı yazıldığında ferah durması için iç boşluk */
-    margin-bottom: 20px; /* Altlarındaki elemanlarla aralarına boşluk koymak için */
+    padding: 12px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Width 100% kullanıldığında padding'in taşmasını engeller */
+    box-sizing: border-box;
     font-family: inherit;
+    font-size: 14px;
 }
 
-/* 3. Gönder Butonu Ayarları */
-.contact-container input[type="submit"] {
-    background-color: #007bff; /* Gönder butonunun arka plan rengi */
-    color: white;
-    border: none; /* Kenarlığı kaldırma */
-    padding: 15px 30px; /* Hem sağ-sol hem de alt-üst padding değerleriyle butonu büyütme */
-    border-radius: 4px;
-    font-size: 16px;
+/* Radio ve Checkbox Grupları (Görseldeki açık gri kutucuklar) */
+.form-group-box {
+    background-color: #f8f9fa;
+    border: 1px solid #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.form-group-box label {
+    display: block;
+    font-weight: normal; /* İçerideki yazılar çok kalın olmasın */
+    margin-bottom: 8px;
+    color: #555;
     cursor: pointer;
-    font-weight: bold;
 }
 
-/* Gönder butonunun üzerine gelindiğinde (Hover) renk değişimi */
-.contact-container input[type="submit"]:hover {
+.form-group-box label:last-child {
+    margin-bottom: 0;
+}
+
+.form-group-box input[type="radio"],
+.form-group-box input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Dosya yükleme alanı alt boşluğu */
+.contact-container input[type="file"] {
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Yan yana duran butonların taşıyıcısı */
+.button-group {
+    display: flex;
+    gap: 15px; /* İki buton arasına boşluk */
+    margin-top: 10px;
+}
+
+/* Buton Stilleri */
+.btn-submit, .btn-reset {
+    flex: 1; /* Butonların genişliklerinin tam eşit olması için */
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Mavi Gönder Butonu */
+.btn-submit {
+    background-color: #007bff; 
+}
+.btn-submit:hover {
     background-color: #0056b3;
+}
+
+/* Kırmızı Temizle Butonu */
+.btn-reset {
+    background-color: #dc3545; 
+}
+.btn-reset:hover {
+    background-color: #c82333;
 }
