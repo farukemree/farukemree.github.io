@@ -138,9 +138,9 @@ footer {
 .form-group-box {
     background-color: #f8f9fa;
     border: 1px solid #f1f1f1;
-    padding: 15px;
+    padding: 35px;
     border-radius: 5px;
-    margin-bottom: 20px; /* Gri kutuların altına da aynı 20px boşluğu veriyoruz */
+    margin-bottom: 30px; /* Gri kutuların altına da aynı 20px boşluğu veriyoruz */
 }
 
 /* Gri kutuların içindeki alt etiketlerin ayarı */
@@ -190,3 +190,4 @@ footer {
 
 .btn-reset { background-color: #dc3545; }
 .btn-reset:hover { background-color: #c82333; }
+
