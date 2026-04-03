@@ -1,0 +1,220 @@
+/* ===== GENEL RESET & BODY ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #eef0f5;
+  color: #333;
+  min-height: 150vh; /* scroll test için */
+}
+
+/* ===== FIXED ÖĞELER ===== */
+
+/* Sol üst - Ana sayfaya dön butonu */
+.fixed-back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #3b5bdb;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  z-index: 1000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.fixed-back:hover {
+  background-color: #2f4ac0;
+  transform: scale(1.05);
+}
+
+/* Sağ alt - Yardımcı Menü */
+.fixed-helper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #7950f2;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  z-index: 1000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.fixed-helper:hover {
+  background-color: #6741d9;
+  box-shadow: 0 0 20px rgba(121, 80, 242, 0.6);
+}
+
+/* ===== BAŞLIK ===== */
+.page-header {
+  text-align: center;
+  padding: 100px 20px 20px;
+  color: #555;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* ===== KART SARICI ===== */
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* ===== ANA DUYURU KARTI (RELATIVE KAPSAYICI) ===== */
+.announcement-card {
+  position: relative;          /* ← ZORUNLU: absolute öğelerin referansı */
+  width: 100%;
+  max-width: 480px;
+  min-height: 380px;
+  background: linear-gradient(135deg, #dde3ff, #f3d9fa);
+  border-radius: 20px;
+  padding: 50px 30px 60px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.announcement-card:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+  transform: translateY(-4px);
+}
+
+/* ===== ABSOLUTE ÖĞELER ===== */
+
+/* Rozet 1 – Sol üst: Ücretsiz */
+.badge-free {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  background-color: #fff3bf;
+  color: #856404;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.badge-free:hover {
+  transform: scale(1.1);
+}
+
+/* Rozet 2 – Sağ üst: Tarih */
+.badge-date {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background-color: #d3f9d8;
+  color: #2b8a3e;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.badge-date:hover {
+  transform: scale(1.1);
+}
+
+/* Rozet 3 – Sağ alt: Son Kayıt */
+.badge-deadline {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffe8cc;
+  color: #c2410c;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  z-index: 2;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.badge-deadline:hover {
+  background-color: #ffd8a8;
+}
+
+/* Dekoratif daire – z-index örneği (içerikten arkada) */
+.deco-circle {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: rgba(150, 100, 255, 0.15);
+  z-index: 1;  /* ← içeriğin (z-index:2) arkasında kalır */
+}
+
+/* ===== KART İÇERİĞİ ===== */
+.card-content {
+  position: relative;
+  z-index: 2; /* deco-circle'ın önünde */
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2c2c6c;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.location-box {
+  background: white;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  color: #333;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.location-box:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+.page-footer {
+  text-align: center;
+  padding: 30px;
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+/* ===== @KEYFRAMES ANİMASYON ===== */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
