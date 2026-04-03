@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAB 5 – CSS Position</title>
+  <link rel="stylesheet" href="hafta5.css" />
+</head>
+<body>
+
+  <!-- FIXED ÖĞE: Sayfanın sağ altında sabit kalır -->
+  <div class="fixed-helper">Yardımcı Menü</div>
+
+  <!-- FIXED NAV: Sol üstte "Ana Sayfaya Dön" butonu -->
+  <a href="index.html" class="fixed-back">← Ana Sayfaya Dön</a>
+
+  <!-- BAŞLIK ALANI -->
+  <header class="page-header">
+    <h1>Kampüs Etkinlikleri</h1>
+  </header>
+
+  <!-- ANA KART ALANI -->
+  <main class="card-wrapper">
+
+    <div class="announcement-card">
+
+      <!-- ABSOLUTE ÖĞE 1: Sol üst köşe rozeti -->
+      <span class="badge badge-free">Ücretsiz</span>
+
+      <!-- ABSOLUTE ÖĞE 2: Sağ üst tarih etiketi -->
+      <span class="badge badge-date">24 Nisan</span>
+
+      <!-- ABSOLUTE ÖĞE 3: Sağ alt "Son Kayıt" etiketi -->
+      <span class="badge badge-deadline">Son Kayıt</span>
+
+      <!-- ABSOLUTE ÖĞE 4: Arka plan dekoratif daire (z-index örneği) -->
+      <div class="deco-circle"></div>
+
+      <!-- KART İÇERİĞİ -->
+      <div class="card-content">
+        <h2 class="card-title">Teknoloji Topluluğu Etkinliği</h2>
+        <p class="card-desc">
+          Bu etkinlikte CSS position özelliklerini keşfedecek, relative,
+          absolute, fixed, z-index, hover, cursor ve animasyon mantığını
+          uygulamalı olarak öğreneceksiniz.
+        </p>
+        <div class="location-box">📍 Konum: Konferans Salonu</div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <p>2026 – LAB Position Örnek Çalışması</p>
+  </footer>
+
+</body>
+</html>
