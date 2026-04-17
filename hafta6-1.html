@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Öğrenci Not Hesaplama</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 400px; }
+        input { width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; cursor: pointer; }
+        #sonucBox { margin-top: 20px; padding: 15px; background-color: #f0f0f0; display: none; }
+        h2 { margin-top: 0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Öğrenci Not Hesaplama</h2>
+    <input type="text" id="adSoyad" placeholder="Ad Soyad">
+    <input type="text" id="vizeNotu" placeholder="Vize Notu">
+    <input type="text" id="finalNotu" placeholder="Final Notu">
+    <button onclick="hesaplaNot()">Hesapla</button>
+
+    <div id="sonucBox">
+        <strong id="resAd"></strong><br><br>
+        Ortalama: <span id="resOrt"></span><br>
+        Harf Notu: <span id="resHarf"></span><br>
+        Durum: <span id="resDurum"></span>
+    </div>
+</div>
+
+<script>
+    function hesaplaNot() {
+        const ad = document.getElementById('adSoyad').value;
+        const vize = parseFloat(document.getElementById('vizeNotu').value);
+        const final = parseFloat(document.getElementById('finalNotu').value);
+        
+        if (isNaN(vize) || isNaN(final)) {
+            alert("Lütfen geçerli notlar giriniz.");
+            return;
+        }
+
+        const ortalama = (vize * 0.4) + (final * 0.6);
+        let harf = "";
+        
+        if (ortalama >= 90) harf = "AA";
+        else if (ortalama >= 80) harf = "BA";
+        else if (ortalama >= 70) harf = "BB";
+        else if (ortalama >= 60) harf = "CB";
+        else if (ortalama >= 50) harf = "CC";
+        else harf = "FF";
+
+        const durum = ortalama >= 50 ? "Geçti" : "Kaldı";
+
+        document.getElementById('resAd').innerText = ad;
+        document.getElementById('resOrt').innerText = ortalama.toFixed(2);
+        document.getElementById('resHarf').innerText = harf;
+        document.getElementById('resDurum').innerText = durum;
+        document.getElementById('sonucBox').style.display = "block";
+    }
+</script>
+
+</body>
+</html>
