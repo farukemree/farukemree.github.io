@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Birim Dönüştürücü</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; }
+        .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        input, select, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 4px; border: 1px solid #ccc; box-sizing: border-box; }
+        button { background-color: #007bff; color: white; border: none; cursor: pointer; font-weight: bold; }
+        .result { background-color: #d4edda; padding: 15px; text-align: center; font-weight: bold; border-radius: 4px; display: none; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h3>Birim Dönüştürücü</h3>
+    <label>Değer Giriniz:</label>
+    <input type="number" id="deger" placeholder="50">
+    
+    <label>Dönüşüm Tipi:</label>
+    <select id="tip">
+        <option value="m-km">Metre -> Kilometre</option>
+        <option value="c-f">Celsius -> Fahrenheit</option>
+        <option value="kg-g">Kilogram -> Gram</option>
+    </select>
+
+    <button onclick="donustur()">Hesapla</button>
+    <div id="sonucBirim" class="result"></div>
+</div>
+
+<script>
+    function donustur() {
+        const deger = parseFloat(document.getElementById('deger').value);
+        const tip = document.getElementById('tip').value;
+        let sonuc = 0;
+
+        if (isNaN(deger)) {
+            alert("Lütfen bir sayı girin.");
+            return;
+        }
+
+        switch(tip) {
+            case "m-km": sonuc = deger / 1000; break;
+            case "c-f": sonuc = (deger * 9/5) + 32; break;
+            case "kg-g": sonuc = deger * 1000; break;
+        }
+
+        const sonucDiv = document.getElementById('sonucBirim');
+        sonucDiv.innerText = "Sonuç: " + sonuc.toLocaleString();
+        sonucDiv.style.display = "block";
+    }
+</script>
+
+</body>
+</html>
