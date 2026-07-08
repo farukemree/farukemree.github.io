@@ -1,193 +1,243 @@
-/* Genel sayfa ayarı */
+/* ==========================================================================
+   1. GENEL SAYFA AYARLARI & TİPOGRAFİ
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #f0f2f5;
-    font-family: Arial, sans-serif;
+    background-color: #f8fafc; /* Modern, temiz ve ultra hafif mavi/gri arka plan */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: #1e293b; /* Okumayı kolaylaştıran koyu slate rengi */
+    line-height: 1.6;
 }
 
+/* Tüm sayfayı ortalayan ana taşıyıcı */
 .container {
-    width: 80%;
-    margin: 20px auto;
-    background-color: white;
-    border: 1px solid #ccc;
+    width: 90%;
+    max-width: 1200px; /* Büyük ekranlarda çok fazla yayılmasını engeller */
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 12px; /* Köşeleri yumuşattık */
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05); /* Modern, hafif bir derinlik gölgesi */
+    overflow: hidden; /* Köşelerin taşmasını önler */
 }
 
-/* 1. Grup Seçici Örneği */
-h1, h2, p {
-    color: #333;
-    margin: 10px;
+/* Grup Seçici */
+h1, h2, h3 {
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-/* 1. Hiyerarşik Seçici Örneği: Menü yapısı */
+/* ==========================================================================
+   2. ÜST MENÜ VE NAVİGASYON (NAV)
+   ========================================================================== */
 nav ul {
     list-style-type: none;
-    padding: 10px;
+    padding: 15px 25px;
     margin: 0;
     text-align: right;
-    background-color: #e2e8f0;
+    background-color: #1e293b; /* Koyu premium arka plan */
+    display: flex;
+    justify-content: flex-end; /* Esnek yan yana dizilim */
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
-/* Menüyü yatay yapma */
 nav ul li {
     display: inline-block; 
 }
 
-/* 2. Hiyerarşik Seçici Örneği: Link tasarımı */
 nav ul li a {
     text-decoration: none;
     padding: 8px 16px;
-    color: #333;
-    border-radius: 4px;
+    color: #94a3b8; /* İlk hali biraz daha soft */
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.25s ease; /* Yumuşak geçiş efekti */
 }
 
 /* Menü hover efekti */
 nav ul li a:hover {
-    background-color: #8da4d0;
-    color: white;
+    background-color: #334155;
+    color: #38bdf8; /* Parlak modern mavi vurgu */
 }
 
-/* Sütunları yan yana getirme (Display mantığı) */
+/* ==========================================================================
+   3. ANA İÇERİK DÜZENİ (FLEXBOX ASİMETRİSİ)
+   ========================================================================== */
 main {
     display: flex; 
-    padding: 10px;
+    gap: 25px; /* Sütunlar arası boşluk */
+    padding: 30px;
+    flex-wrap: wrap; /* Mobilde alt alta düşmesi için */
 }
 
+/* Ana içerik alanı daha geniş (%65) */
 .icerik {
-    width: 50%;
-    background-color: #faeed7; /* Görseldeki sarımtırak renk */
-    margin: 10px;
-    padding: 15px;
-    border: 1px solid #e5d3b3;
-    border-radius: 5px;
+    flex: 2;
+    min-width: 300px;
+    background-color: #ffffff; 
+    padding: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
 }
 
+/* Yan menü alanı daha dar (%35) ve daha estetik */
 .yan-menu {
-    width: 50%;
-    background-color: #e6f0f4; /* Görseldeki mavimsi renk */
-    margin: 10px;
-    padding: 15px;
-    border: 1px solid #baccce;
-    border-radius: 5px;
+    flex: 1;
+    min-width: 260px;
+    background-color: #f1f5f9; /* Temiz açık gri/mavi tonu */
+    padding: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
 }
 
-/* Metin düzenlemeleri (En az 3 özellik kuralı) */
+/* Metin düzenlemeleri */
 .icerik p, .yan-menu p {
-    font-size: 15px;      /* 1. Özellik */
-    line-height: 1.8;     /* 2. Özellik */
-    color: #444;          /* 3. Özellik */
-    text-align: justify;  /* 4. Özellik */
+    font-size: 15px;      
+    line-height: 1.8;     
+    color: #475569;          
+    text-align: justify;  
+    margin-bottom: 15px;
 }
 
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #eceef1;
-    border-top: 1px solid #ddd;
-}
-
-/* ========================================= */
-/* LAB 3: DETAYLI İLETİŞİM FORMU (GÖRSELE BİREBİR ORANTILI) */
-/* ========================================= */
-
+/* ==========================================================================
+   4. LAB 3: MODERN İLETİŞİM FORMU
+   ========================================================================== */
 .contact-container {
     width: 100%;
     max-width: 600px;
     margin: 40px auto;
-    padding: 30px;
+    padding: 35px;
     background-color: #ffffff;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    font-family: Arial, sans-serif;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-/* Form Başlığı */
 .contact-container h2 {
     text-align: center;
-    color: #333;
-    margin-bottom: 25px;
-    font-size: 24px;
+    color: #0f172a;
+    margin-bottom: 30px;
+    font-size: 26px;
+    letter-spacing: -0.5px;
 }
 
-/* Ana Etiketler (Labels - Üst boşluklar tamamen sıfırlandı) */
 .contact-container label {
     display: block;
-    font-weight: bold;
-    color: #444;
-    margin-top: 0; /* GEREKSİZ ÜST BOŞLUK KALDIRILDI */
-    margin-bottom: 8px; /* Sadece yazıyla kutu arasında ince bir boşluk bırakıldı */
-    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px; 
+    font-size: 14px;
 }
 
-/* Tüm metin giriş alanları */
+/* Giriş Alanları Tasarımı */
 .contact-container input[type="text"],
 .contact-container input[type="email"],
 .contact-container input[type="password"],
 .contact-container select,
 .contact-container textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px; /* Her bir kutunun altından standart 20px boşluk veriyoruz */
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px 16px;
+    margin-bottom: 22px; 
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
     box-sizing: border-box;
     font-family: inherit;
     font-size: 14px;
+    color: #1e293b;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
 }
 
-/* Radio ve Checkbox Grupları (Açık Gri Kutular) */
+/* Kutuya tıklandığında (Focus durumu) oluşan modern efekt */
+.contact-container input:focus,
+.contact-container select:focus,
+.contact-container textarea:focus {
+    outline: none;
+    border-color: #6366f1; /* İndigo mavisi odak çerçevesi */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+/* Seçim alanları (Radio/Checkbox) için hafif kutu */
 .form-group-box {
-    background-color: #f8f9fa;
-    border: 1px solid #f1f1f1;
-    padding: 35px;
-    border-radius: 5px;
-    margin-bottom: 30px; /* Gri kutuların altına da aynı 20px boşluğu veriyoruz */
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px; 
 }
 
-/* Gri kutuların içindeki alt etiketlerin ayarı */
 .form-group-box label {
-    margin-bottom: 10px;
-    font-weight: normal;
+    margin-bottom: 12px;
+    font-weight: 500;
     cursor: pointer;
-    color: #555;
+    color: #475569;
+    display: flex;
+    align-items: center;
 }
 
 .form-group-box label:last-child {
-    margin-bottom: 0; /* Gri kutunun en altındaki elemanın boşluğunu siliyoruz ki kutu sarkmasın */
+    margin-bottom: 0; 
 }
 
 .form-group-box input[type="radio"],
 .form-group-box input[type="checkbox"] {
-    margin-right: 8px;
-}
-
-/* Dosya yükleme alanı */
-.contact-container input[type="file"] {
-    display: block;
-    margin-bottom: 20px;
-}
-
-/* Yan yana duran butonların taşıyıcısı */
-.button-group {
-    display: flex;
-    gap: 15px; 
-    margin-top: 10px;
-}
-
-/* Buton Stilleri */
-.btn-submit, .btn-reset {
-    flex: 1; 
-    padding: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
     cursor: pointer;
 }
 
-.btn-submit { background-color: #007bff; }
-.btn-submit:hover { background-color: #0056b3; }
+/* Buton Grupları ve Tasarımları */
+.button-group {
+    display: flex;
+    gap: 15px; 
+    margin-top: 15px;
+}
 
-.btn-reset { background-color: #dc3545; }
-.btn-reset:hover { background-color: #c82333; }
+.btn-submit, .btn-reset {
+    flex: 1; 
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
 
+.btn-submit { 
+    background-color: #4f46e5; /* Modern Canlı İndigo */
+}
+.btn-submit:hover { 
+    background-color: #4338ca; 
+    transform: translateY(-1px); /* Hafif yukarı kalkma efekti */
+}
+
+.btn-reset { 
+    background-color: #ef4444; /* Modern Soft Kırmızı */
+}
+.btn-reset:hover { 
+    background-color: #dc2626; 
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   5. SAYFA ALTI (FOOTER)
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0f172a;
+    color: #94a3b8;
+    font-size: 14px;
+    border-top: 1px solid #1e293b;
+}
