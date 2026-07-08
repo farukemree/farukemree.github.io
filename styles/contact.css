@@ -1,1 +1,286 @@
-hey
+/* ==========================================================================
+   Faruk Emre Bakır — İletişim Sayfası
+   Ana temayla aynı palet ve tipografi (bkz. style.css / about.css / interests.css)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg:        #eef1f6;
+  --surface:   #ffffff;
+  --ink:       #1b2030;
+  --ink-soft:  #565f78;
+  --line:      #d9dee8;
+  --accent:    #3452e1;
+  --accent-ink:#1f2f9e;
+  --amber:     #ffb100;
+  --danger:    #d0473e;
+  --radius:    10px;
+
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 1px 1px, #dde2ec 1px, transparent 1px) 0 0 / 22px 22px,
+    var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  padding: 0 1.5rem 3rem;
+}
+
+h1, h2, h3, p, ul, hr, footer, body > a {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  padding: 2.5rem 0 0.25rem;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  letter-spacing: -0.02em;
+}
+
+h1::before {
+  content: '~/';
+  color: var(--amber);
+  margin-right: 0.15em;
+}
+
+h1 + p {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+h2::before {
+  content: '//';
+  color: var(--amber);
+  font-weight: 700;
+}
+
+h3 {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+  color: var(--accent-ink);
+}
+
+p { color: var(--ink-soft); }
+
+/* İletişim bilgileri listesi */
+ul {
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.6rem;
+  color: var(--ink-soft);
+}
+ul li:last-child { margin-bottom: 0; }
+ul li a { font-weight: 500; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2rem auto;
+}
+
+/* ---------------------------------- Form ---------------------------------- */
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-container h2 { margin-top: 0; }
+
+form {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--amber);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-top: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+form label:first-of-type { margin-top: 0; }
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="file"],
+form select,
+form textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  width: 100%;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(52, 82, 225, 0.15);
+}
+
+form textarea { resize: vertical; min-height: 6.5rem; }
+
+form input[type="file"] {
+  padding: 0.5rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+/* Radio / checkbox grupları */
+.form-group-box {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.radio-label,
+.checkbox-label {
+  font-family: var(--font-body) !important;
+  font-weight: 400 !important;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+.radio-label input,
+.checkbox-label input {
+  accent-color: var(--accent);
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+/* Butonlar */
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+
+.btn-submit {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-submit:hover { background: var(--accent-ink); transform: translateY(-1px); }
+
+.btn-reset {
+  background: transparent;
+  color: var(--ink-soft);
+  border-color: var(--line);
+}
+
+.btn-reset:hover { color: var(--danger); border-color: var(--danger); }
+
+/* ---------------------------------- Alt kısım ---------------------------------- */
+
+body > a {
+  display: block;
+  width: fit-content;
+  margin-top: 2rem;
+  padding: 0.6rem 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+body > a::before { content: '← '; }
+
+body > a:hover {
+  color: var(--amber);
+  border-color: var(--amber);
+  transform: translateY(-1px);
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  body { padding: 0 1rem 2rem; }
+  form { padding: 1.5rem 1.25rem 1.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
