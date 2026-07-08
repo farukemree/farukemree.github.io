@@ -162,6 +162,9 @@ footer {
   font-family: var(--font-mono);
   font-size: 0.8rem;
 }
+ol a{
+   align-items; center;
+}
 
 @media (max-width: 600px) {
   body { padding: 0 1rem 2rem; }
