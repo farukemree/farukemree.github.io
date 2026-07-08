@@ -131,6 +131,7 @@ li:last-child { margin-bottom: 0; }
 
 a[href="index.html"] {
   display: inline-block;
+   align-items; center;
   margin-top: 2rem;
   padding: 0.6rem 1.2rem;
   font-family: var(--font-mono);
@@ -161,9 +162,6 @@ footer {
   color: var(--ink-soft);
   font-family: var(--font-mono);
   font-size: 0.8rem;
-}
-a {
-   align-items; center;
 }
 
 @media (max-width: 600px) {
